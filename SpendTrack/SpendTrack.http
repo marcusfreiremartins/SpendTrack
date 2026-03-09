@@ -1,0 +1,6 @@
+@SpendTrack_HostAddress = http://localhost:5232
+
+GET {{SpendTrack_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
