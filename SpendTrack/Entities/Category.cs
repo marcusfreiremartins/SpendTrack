@@ -10,7 +10,8 @@ namespace SpendTrack.Api.Entities
         [Required]
         [StringLength(400)]
         public string Description { get; set; }
-
+        
+        [Required]
         public CategoryPurpose Purpose {  get; set; } 
     }
 }

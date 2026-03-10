@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using SpendTrack.Api.Data;
+using SpendTrack.Api.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,7 +12,15 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
-
+builder.Services.AddControllers()
+    .AddJsonOptions(options =>
+    {
+        options.JsonSerializerOptions.Converters.Add(new System.Text.Json.Serialization.JsonStringEnumConverter());
+    });
+builder.Services.AddScoped<CategoryService>();
+builder.Services.AddScoped<PersonService>();
+builder.Services.AddScoped<TransactionService>();
+builder.Services.AddScoped<ReportService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
