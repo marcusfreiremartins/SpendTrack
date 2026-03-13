@@ -45,6 +45,5 @@ O script de criação das tabelas está em `Migration.sql` na raiz do projeto.
 ## Deploy
 
 - **Frontend:** https://spendtrack-web.onrender.com
-- **Backend:** https://spendtrack-api-orce.onrender.com/swagger
 
 > **Observação:** Como o deploy utiliza o plano gratuito do Render, os serviços podem entrar em modo de hibernação após um período de inatividade. Na primeira requisição após a hibernação, pode demorar alguns segundos até o serviço voltar a responder normalmente.
