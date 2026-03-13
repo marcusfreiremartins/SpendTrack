@@ -49,6 +49,10 @@ namespace SpendTrack.Api.Controllers
             try
             {
                 var created = await _personService.CreatePerson(person);
+                if(created == null)
+                {
+                    return BadRequest("Não foi possivel criar pessoa");
+                }
                 return CreatedAtAction(nameof(GetAllPersons), new { id = created.Id }, created);
             }
             catch (Exception ex)
@@ -65,7 +69,7 @@ namespace SpendTrack.Api.Controllers
                 var updated = await _personService.UpdatePerson(person, personId);
                 if (updated == null)
                 {
-                    return NotFound("Pessoa não encontrada.");
+                    return BadRequest("Não foi possivel atualizar pessoa");
                 }
 
                 return Ok(updated);
@@ -84,7 +88,7 @@ namespace SpendTrack.Api.Controllers
                 var deleted = await _personService.DeletePerson(personId);
                 if (deleted == null)
                 {
-                    return NotFound("Pessoa não encontrada.");
+                    return BadRequest("Não foi possivel deletar pessoa");
                 }
 
                 return Ok(deleted);

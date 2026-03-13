@@ -35,6 +35,11 @@ namespace SpendTrack.Api.Controllers
             try
             {
                 var created = await _categoryService.CreateCategory(category);
+
+                if (created == null)
+                {
+                    return BadRequest("Não foi possivel criar categoria");
+                }
                 return CreatedAtAction(nameof(GetAll), new { id = created.Id }, created);
             }
             catch (Exception ex)

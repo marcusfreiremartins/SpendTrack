@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.36227.8
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpendTrack.Api", "SpendTrack\SpendTrack.Api.csproj", "{8EFAA9CE-6807-4C32-A122-CA75716A9ABC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpendTrack.Api", "SpendTrack\SpendTrack.Api.csproj", "{8EFAA9CE-6807-4C32-A122-CA75716A9ABC}"
 EndProject
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "SpendTrack.Web", "SpendTrack.Web\", "{C2A520CC-0793-40A1-BF5B-F0A578242B14}"
 	ProjectSection(WebsiteProperties) = preProject
